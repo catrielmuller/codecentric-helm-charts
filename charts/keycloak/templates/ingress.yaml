@@ -44,11 +44,6 @@ spec:
                 name: {{ include "keycloak.fullname" $ }}-http
                 port:
                   name: {{ $ingress.servicePort }}
-            {{- else }}
-            backend:
-              serviceName: {{ include "keycloak.fullname" $ }}-http
-              servicePort: {{ $ingress.servicePort }}
-            {{- end }}
           {{- end }}
     {{- end }}
 {{- if $ingress.console.enabled }}
@@ -97,11 +92,6 @@ spec:
                 name: {{ include "keycloak.fullname" $ }}-http
                 port:
                   name: {{ $ingress.servicePort }}
-            {{- else }}
-            backend:
-              serviceName: {{ include "keycloak.fullname" $ }}-http
-              servicePort: {{ $ingress.servicePort }}
-            {{- end }}
           {{- end }}
     {{- end }}
 {{- end -}}
